@@ -16,7 +16,23 @@ F=32010768,
 G=15224366,
 H=19495506,
 I=4329604,
-J=2165324
+J=2165324,
+K=9777481,
+L=8659215,
+M=18732593,
+N=18667121,
+O=6595878,
+P=14989576,
+Q=15259246,
+R=14989609,
+S=7608366,
+T=32641156,
+U=9741606,
+V=18157568,
+W=18405034,
+X=18157905,
+Y=18157700,
+Z=32575775
 };
 
 /////////////////////////
@@ -62,7 +78,7 @@ return a;
 //Building /////////////////////
 //read input string and print the big text HORIZONTALY
 ///////////////////////////////////////
-string toBig(string str){
+string toBig(string str , char ch ){
 int lgh =str.length();
 letters Char=A;//enum
 
@@ -99,6 +115,38 @@ else if (str.at(i)=='I' || str.at(i)=='i')
 Char=I;
 else if (str.at(i)=='J' || str.at(i)=='j')
 Char=J;
+else if (str.at(i)=='K' || str.at(i)=='k')
+Char=K;
+else if (str.at(i)=='L' || str.at(i)=='l')
+Char=L;
+else if (str.at(i)=='M' || str.at(i)=='m')
+Char=M;
+else if (str.at(i)=='N' || str.at(i)=='n')
+Char=N;
+else if (str.at(i)=='O' || str.at(i)=='o')
+Char=O;
+else if (str.at(i)=='P' || str.at(i)=='p')
+Char=P;
+else if (str.at(i)=='Q' || str.at(i)=='q')
+Char=Q;
+else if (str.at(i)=='R' || str.at(i)=='r')
+Char=R;
+else if (str.at(i)=='S' || str.at(i)=='s')
+Char=S;
+else if (str.at(i)=='T' || str.at(i)=='t')
+Char=T;
+else if (str.at(i)=='U' || str.at(i)=='u')
+Char=U;
+else if (str.at(i)=='V' || str.at(i)=='v')
+Char=V;
+else if (str.at(i)=='W' || str.at(i)=='w')
+Char=W;
+else if (str.at(i)=='X' || str.at(i)=='x')
+Char=X;
+else if (str.at(i)=='Y' || str.at(i)=='y')
+Char=Y;
+else if (str.at(i)=='Z' || str.at(i)=='z')
+Char=Z;
 
 tmpArray=show(Char);//storing new block in the tempo array
 //add it to the big array 
@@ -112,7 +160,7 @@ string out;//out return value
 for (int i=0;i<5;i++){
 for (int ii=0;ii<5*lgh;ii++)
 if (array[i][ii])
-out +="#";
+out +=ch;
 else
 out +=" ";
 out +="\n";
@@ -152,14 +200,17 @@ int main (){
 
 //make new char here
 //k,l,m,n , ... ,0,1,2,...,other chars
-cout <<"   * "<<endl;
-cout <<"   * "<<endl;
-cout <<"   * "<<endl;
-cout <<"*  * "<<endl;
-cout <<" **  "<<endl;
+/*
+cout <<" *   "<<endl;
+cout <<" *   "<<endl;
+cout <<" *   "<<endl;
+cout <<" *   "<<endl;
+cout <<" ****"<<endl;
 
-int val=getTheNumb("   *    *    * *  *  **  ");//key value 
+int val=getTheNumb(" *    *    *    *    ****");//key value 
 cout <<val<<endl;
+*/
+
 
 
 string str;
@@ -168,9 +219,7 @@ cin >> str;
 cout <<endl;
 
 //print (string , int color [1-6] (default construc ) , boolean separator (default constructor false))
-print(toBig(str),6,true);//big letters , blue , separators
+print(toBig(str,'+'),6);//big letters , blue , separators
 
 return 0;
 }
-
-
